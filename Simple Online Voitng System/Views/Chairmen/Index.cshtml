@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Models.Chairman>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Chairman Candidate!! Please give support best candidate</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@foreach (var item in Model)
+{
+    <div class="card text-center">
+        <div class="card-header">
+            ChairMan Candidate!
+        </div>
+        <div class="row">
+            <div class="col">
+                <img class="rounded " height="240" src="~/images/@item.ProfilePicPath" alt="Card image cap">
+            </div>
+            <div class="col">
+                <img class="rounded " height="240" src="~/images/@item.SymbolPath" alt="Card image cap">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@item.Name</h5>
+            <p class="card-text">Please give me support for people helps! Thanks</p>
+            <a asp-action="AddVote" asp-route-data="@item.Id" class="btn btn-primary">Give Vote</a>
+        </div>
+    </div>
+    
+    @*<td>
+        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+    </td>*@    
+
+}

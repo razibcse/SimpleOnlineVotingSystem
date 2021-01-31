@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    var chairman = (Models.Chairman)ViewData["chairman"];
+    var member = (Models.MemberMan)ViewData["member"];
+    var memberWoman = (Models.MemberWoman)ViewData["womenmember"];
+}
+
+<h1>Current Winner Candidate!!</h1>
+
+@if (chairman != null)
+{
+    <br />
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Current Winner Chairman: Total Vote (@chairman.TotalVote)</h3>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img class="rounded " height="240" src="~/images/@chairman.ProfilePicPath" alt="Card image cap">
+            </div>
+            <div class="col">
+                <img class="rounded " height="240" src="~/images/@chairman.SymbolPath" alt="Card image cap">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@chairman.Name</h5>
+            <p class="card-text"><h5>Lots of Thanks for supporting me!!</h5></p>
+        </div>
+    </div>
+}
+else
+{
+    <h3>No Chairman winner available..!!</h3>
+}
+
+@if (member != null)
+{
+    <br />
+
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Current Winner Member: Total Vote (@member.TotalVote)</h3>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img class="rounded " height="240" src="~/images/@member.ProfilePicPath" alt="Card image cap">
+            </div>
+            <div class="col">
+                <img class="rounded " height="240" src="~/images/@member.SymbolPath" alt="Card image cap">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@member.Name</h5>
+            <p class="card-text"><h5>Lots of Thanks for supporting me!!</h5></p>
+        </div>
+    </div>
+}
+else
+{
+    <h3>No Member winner available..!!</h3>
+}
+
+@if (memberWoman != null)
+{
+    <br />
+
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Current Winner Member: Total Vote (@memberWoman.TotalVote)</h3>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img class="rounded " height="240" src="~/images/@memberWoman.ProfilePicPath" alt="Card image cap">
+            </div>
+            <div class="col">
+                <img class="rounded " height="240" src="~/images/@memberWoman.SymbolPath" alt="Card image cap">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@memberWoman.Name</h5>
+            <p class="card-text"><h5>Lots of Thanks for supporting me!!</h5></p>
+        </div>
+    </div>
+
+}
+else
+{
+    <h3>No Women Member winner available..!!</h3>
+}
+
+
